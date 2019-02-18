@@ -168,7 +168,7 @@ module.exports = {
             'process.env': {
                 NODE_ENV: JSON.stringify(process.env.NODE_ENV),
             },
-            'LANGUAGES_FILE': JSON.stringify(RIOT_LANGUAGES_FILE),
+            'LANGUAGES_INDEX_URL': `require(${JSON.stringify(RIOT_LANGUAGES_FILE)})`,
         }),
         new ExtractTextPlugin("bundles/[hash]/[name].css", {
             allChunks: true,
